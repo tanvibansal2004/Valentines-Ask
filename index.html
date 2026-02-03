@@ -1,46 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Valentine Letter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You <3</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- Envelope Screen -->
-    <div id="envelope-container">
-      <img src="envelope.png" alt="Envelope" id="envelope" />
-      <p>♡ Letter for You ♡</p>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="stars"></div>
+<div id="hc"></div>
+
+<div class="scene">
+  <div class="card">
+
+    <!-- PAGE 1 -->
+    <div class="page active" id="p1">
+      <h1 class="ptitle">Happy Valentine’s Day</h1>
+      <img src="assets/cat_dance.gif" class="mascot" />
+      <p class="psub">For the one who stole Cookiieee!</p>
+      <button class="px-btn" onclick="goTo('p2')">Peek Inside ></button>
     </div>
 
-    <!-- Letter Screen -->
-    <div id="letter-container">
-      <div class="letter-window">
-        <h1 id="letter-title">Will you be my Valentine?</h1>
+    <!-- PAGE 2 -->
+    <div class="page" id="p2">
+      <h2 class="ptitle">Our Love Moments</h2>
+      <p class="psub">Every moment spent with you is special!</p>
 
-        <img src="cat_heart.gif" class="cat" id="letter-cat" />
+      <div class="win-wrap">
+        <img src="assets/window.png" class="win-frame"/>
+        <div id="mem-grid"></div>
+      </div>
+      <!-- <div class="photo-grid" id="mem-grid"></div> -->
 
-        <div class="buttons" id="letter-buttons">
-          <img src="yes.png" class="btn yes-btn" alt="Yes" />
+      <button class="px-btn" onclick="goTo('p3')">Got you Something?</button>
+    </div>
 
-          <div class="no-wrapper">
-            <img src="no.png" class="btn no-btn" alt="No" />
-          </div>
-        </div>
+    <!-- PAGE 3 -->
+    <div class="page" id="p3">
+      <h2 class="ptitle">A Message for You</h2>
+      <p class="psub">Tap the envelope to open the letter!</p>
 
-        <p id="final-text" class="final-text" style="display: none">
-          <strong>Valentine Date:</strong> Tea's Restaurant at 8pm. Dress fancy!
-        </p>
+      <div class="env-wrap" id="env-wrap">
+        <img src="assets/envelope.png" alt="Envelope" />
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+
+    <!-- PAGE 4 -->
+    <div class="page" id="p4">
+      <h2 class="ptitle">From My Heart</h2>
+
+      <div class="letter-wrap">
+        <p class="lt"><strong>My Cutu Toto,</strong></p>
+        <p class="lt">
+          I can't ever tell you enough about how much I frickin' Love You and how much I'm thankful for you! 💖
+          I'm so lucky to have you in my life. There is just so much I could say to you, but it will never be enough. 😭
+          This year I wanted to do something new and exciting for you, so I built a website (it took a lot of time bro), hehe! 🤓
+          Hope you love it, rest we can talk on the call and I can again tell you how much I love you babie! <br>
+          MUAH MUAH MUAH 💋 <br>
+          Oh, and also, you are very very hottiiee honey *wink wink*
+        </p>
+        <p class="lt lt-sign">Your Cookiieee</p>
+      </div>
+
+      <br />
+      <button class="px-btn" onclick="goTo('p5')">Big Question Now!!</button>
+    </div>
+
+    <!-- PAGE 5 -->
+    <div class="page" id="p5">
+      <h2 class="ptitle">Will you be my Valentine?</h2>
+      <img src="assets/cat_heart.gif" class="cat-final"/>
+
+      <p class="psub" id="valentine-question">Please say Yes?</p>
+
+      <div class="btn-row" id="proposal-btns">
+        <img src="assets/yes.png" class="choice" onclick="yesAnswer()" />
+        <img src="assets/no.png" class="choice" id="noBtn" />
+      </div>
+
+      <p id="result" class="result"></p>
+
+      <br />
+      <button class="px-btn" id="play-again-btn" onclick="goTo('p1')" style="display: none;">Fall for Me Again?</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
